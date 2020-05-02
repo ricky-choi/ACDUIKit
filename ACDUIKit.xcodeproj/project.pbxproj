@@ -29,6 +29,7 @@
 		86549FA3245D3FF600BE9318 /* ACDUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACDUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86549FA8245D3FF600BE9318 /* ACDUIKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDUIKitTests.swift; sourceTree = "<group>"; };
 		86549FAA245D3FF600BE9318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86549FB4245D41A300BE9318 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +54,7 @@
 		86549F90245D3FF600BE9318 = {
 			isa = PBXGroup;
 			children = (
+				86549FB4245D41A300BE9318 /* README.md */,
 				86549F9C245D3FF600BE9318 /* ACDUIKit */,
 				86549FA7245D3FF600BE9318 /* ACDUIKitTests */,
 				86549F9B245D3FF600BE9318 /* Products */,
