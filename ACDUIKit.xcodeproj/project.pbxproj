@@ -10,6 +10,23 @@
 		86549FA4245D3FF600BE9318 /* ACDUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86549F9A245D3FF600BE9318 /* ACDUIKit.framework */; };
 		86549FA9245D3FF600BE9318 /* ACDUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FA8245D3FF600BE9318 /* ACDUIKitTests.swift */; };
 		86549FAB245D3FF600BE9318 /* ACDUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 86549F9D245D3FF600BE9318 /* ACDUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86549FB7245D43A700BE9318 /* ACDTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FB6245D43A700BE9318 /* ACDTabBarController.swift */; };
+		86549FBA245D47B300BE9318 /* ACDTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FB9245D47B300BE9318 /* ACDTabBar.swift */; };
+		86549FBD245D4B6A00BE9318 /* ACDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FBC245D4B6A00BE9318 /* ACDButton.swift */; };
+		86549FBF245D4B8600BE9318 /* ACDSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FBE245D4B8600BE9318 /* ACDSegmentedControl.swift */; };
+		86549FC6245D4C8800BE9318 /* UIGeometry+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FC5245D4C8800BE9318 /* UIGeometry+.swift */; };
+		86549FC8245D4CB400BE9318 /* CGGeometry+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FC7245D4CB400BE9318 /* CGGeometry+.swift */; };
+		86549FCB245D4D5100BE9318 /* ACDStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FCA245D4D5100BE9318 /* ACDStackView.swift */; };
+		86549FCE245D4D8A00BE9318 /* HitExpandable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FCD245D4D8A00BE9318 /* HitExpandable.swift */; };
+		86549FD0245D4EA600BE9318 /* HitExpandable+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FCF245D4EA600BE9318 /* HitExpandable+UIKit.swift */; };
+		86549FD2245D513200BE9318 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FD1245D513200BE9318 /* UIStackView+.swift */; };
+		86549FD4245D54F100BE9318 /* Cleanup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FD3245D54F100BE9318 /* Cleanup.swift */; };
+		86549FD6245D55B600BE9318 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FD5245D55B600BE9318 /* UIView+.swift */; };
+		86549FD8245D569C00BE9318 /* UIControl+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FD7245D569C00BE9318 /* UIControl+.swift */; };
+		86549FDA245D56F900BE9318 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FD9245D56F900BE9318 /* UIViewController+.swift */; };
+		86549FDC245D594F00BE9318 /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FDB245D594F00BE9318 /* UIWindow+.swift */; };
+		86549FDE245D5FAE00BE9318 /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FDD245D5FAE00BE9318 /* UIScrollView+.swift */; };
+		86549FE0245D602200BE9318 /* Scrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86549FDF245D602200BE9318 /* Scrollable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +47,23 @@
 		86549FA8245D3FF600BE9318 /* ACDUIKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDUIKitTests.swift; sourceTree = "<group>"; };
 		86549FAA245D3FF600BE9318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86549FB4245D41A300BE9318 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		86549FB6245D43A700BE9318 /* ACDTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDTabBarController.swift; sourceTree = "<group>"; };
+		86549FB9245D47B300BE9318 /* ACDTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDTabBar.swift; sourceTree = "<group>"; };
+		86549FBC245D4B6A00BE9318 /* ACDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDButton.swift; sourceTree = "<group>"; };
+		86549FBE245D4B8600BE9318 /* ACDSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDSegmentedControl.swift; sourceTree = "<group>"; };
+		86549FC5245D4C8800BE9318 /* UIGeometry+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIGeometry+.swift"; sourceTree = "<group>"; };
+		86549FC7245D4CB400BE9318 /* CGGeometry+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGGeometry+.swift"; sourceTree = "<group>"; };
+		86549FCA245D4D5100BE9318 /* ACDStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACDStackView.swift; sourceTree = "<group>"; };
+		86549FCD245D4D8A00BE9318 /* HitExpandable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitExpandable.swift; sourceTree = "<group>"; };
+		86549FCF245D4EA600BE9318 /* HitExpandable+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HitExpandable+UIKit.swift"; sourceTree = "<group>"; };
+		86549FD1245D513200BE9318 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		86549FD3245D54F100BE9318 /* Cleanup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cleanup.swift; sourceTree = "<group>"; };
+		86549FD5245D55B600BE9318 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		86549FD7245D569C00BE9318 /* UIControl+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+.swift"; sourceTree = "<group>"; };
+		86549FD9245D56F900BE9318 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		86549FDB245D594F00BE9318 /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
+		86549FDD245D5FAE00BE9318 /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
+		86549FDF245D602200BE9318 /* Scrollable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrollable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +107,11 @@
 		86549F9C245D3FF600BE9318 /* ACDUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				86549FCC245D4D7B00BE9318 /* Protocols */,
+				86549FB5245D437C00BE9318 /* TabBar */,
+				86549FC9245D4D3E00BE9318 /* Views */,
+				86549FBB245D4B4C00BE9318 /* Controls */,
+				86549FC0245D4BBE00BE9318 /* Extensions */,
 				86549F9D245D3FF600BE9318 /* ACDUIKit.h */,
 				86549F9E245D3FF600BE9318 /* Info.plist */,
 			);
@@ -86,6 +125,58 @@
 				86549FAA245D3FF600BE9318 /* Info.plist */,
 			);
 			path = ACDUIKitTests;
+			sourceTree = "<group>";
+		};
+		86549FB5245D437C00BE9318 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				86549FB6245D43A700BE9318 /* ACDTabBarController.swift */,
+				86549FB9245D47B300BE9318 /* ACDTabBar.swift */,
+			);
+			name = TabBar;
+			sourceTree = "<group>";
+		};
+		86549FBB245D4B4C00BE9318 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				86549FBC245D4B6A00BE9318 /* ACDButton.swift */,
+				86549FBE245D4B8600BE9318 /* ACDSegmentedControl.swift */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
+		86549FC0245D4BBE00BE9318 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				86549FC7245D4CB400BE9318 /* CGGeometry+.swift */,
+				86549FC5245D4C8800BE9318 /* UIGeometry+.swift */,
+				86549FD1245D513200BE9318 /* UIStackView+.swift */,
+				86549FD5245D55B600BE9318 /* UIView+.swift */,
+				86549FD7245D569C00BE9318 /* UIControl+.swift */,
+				86549FD9245D56F900BE9318 /* UIViewController+.swift */,
+				86549FDB245D594F00BE9318 /* UIWindow+.swift */,
+				86549FDD245D5FAE00BE9318 /* UIScrollView+.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		86549FC9245D4D3E00BE9318 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				86549FCA245D4D5100BE9318 /* ACDStackView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		86549FCC245D4D7B00BE9318 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				86549FCD245D4D8A00BE9318 /* HitExpandable.swift */,
+				86549FCF245D4EA600BE9318 /* HitExpandable+UIKit.swift */,
+				86549FD3245D54F100BE9318 /* Cleanup.swift */,
+				86549FDF245D602200BE9318 /* Scrollable.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +241,7 @@
 				TargetAttributes = {
 					86549F99245D3FF600BE9318 = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 					86549FA2245D3FF600BE9318 = {
 						CreatedOnToolsVersion = 11.4.1;
@@ -197,6 +289,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86549FDA245D56F900BE9318 /* UIViewController+.swift in Sources */,
+				86549FDE245D5FAE00BE9318 /* UIScrollView+.swift in Sources */,
+				86549FD6245D55B600BE9318 /* UIView+.swift in Sources */,
+				86549FC8245D4CB400BE9318 /* CGGeometry+.swift in Sources */,
+				86549FE0245D602200BE9318 /* Scrollable.swift in Sources */,
+				86549FBA245D47B300BE9318 /* ACDTabBar.swift in Sources */,
+				86549FC6245D4C8800BE9318 /* UIGeometry+.swift in Sources */,
+				86549FD8245D569C00BE9318 /* UIControl+.swift in Sources */,
+				86549FCB245D4D5100BE9318 /* ACDStackView.swift in Sources */,
+				86549FBF245D4B8600BE9318 /* ACDSegmentedControl.swift in Sources */,
+				86549FD2245D513200BE9318 /* UIStackView+.swift in Sources */,
+				86549FB7245D43A700BE9318 /* ACDTabBarController.swift in Sources */,
+				86549FBD245D4B6A00BE9318 /* ACDButton.swift in Sources */,
+				86549FD4245D54F100BE9318 /* Cleanup.swift in Sources */,
+				86549FCE245D4D8A00BE9318 /* HitExpandable.swift in Sources */,
+				86549FD0245D4EA600BE9318 /* HitExpandable+UIKit.swift in Sources */,
+				86549FDC245D594F00BE9318 /* UIWindow+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +451,7 @@
 		86549FAF245D3FF600BE9318 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -359,6 +469,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.appcid.ACDUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -367,6 +478,7 @@
 		86549FB0245D3FF600BE9318 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -392,6 +504,7 @@
 		86549FB2245D3FF600BE9318 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ACDUIKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -409,6 +522,7 @@
 		86549FB3245D3FF600BE9318 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ACDUIKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
