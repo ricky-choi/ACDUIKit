@@ -100,7 +100,7 @@ open class ACDTabBar: UIView {
         
         _invalidateStackView()
         
-        segmentedControl.addAction(for: .touchUpInside) { [weak self] in
+        segmentedControl.addAction(for: .valueChanged) { [weak self] in
             guard let self = self else { return }
             
             guard let items = self._items else { return }
