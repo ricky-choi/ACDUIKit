@@ -20,9 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        let tabBarController = ACDTabBarController(tabBar: ACDTabBar(buttonBuilder: { () -> ACDButton in
+        let tabBar = ACDTabBar(buttonBuilder: { () -> ACDButton in
             return .init()
-        }))
+        })
+        tabBar.itemSpacing = 5
+        tabBar.axis = .vertical
+        tabBar.alignment = .leading
+        let tabBarController = ACDTabBarController(tabBar: tabBar)
         
         let vc1 = UIViewController()
         vc1.tabBarItem = UITabBarItem(title: "Tray", image: UIImage(systemName: "tray.full"), selectedImage: UIImage(systemName: "tray.full.fill"))

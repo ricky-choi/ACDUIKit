@@ -56,9 +56,40 @@ open class ACDTabBar: UIView {
     @NSCopying open var unselectedItemTintColor: UIColor? // <-> tintColor
     
     open var isTranslucent: Bool = true
-    open var itemSpacing: CGFloat = 24 {
-        didSet {
-            _invalidateStackView()
+    
+    public var itemSpacing: CGFloat {
+        get {
+            segmentedControl.spacing
+        }
+        set {
+            segmentedControl.spacing = newValue
+        }
+    }
+    
+    public var alignment: UIStackView.Alignment {
+        get {
+            segmentedControl.alignment
+        }
+        set {
+            segmentedControl.alignment = newValue
+        }
+    }
+    
+    public var axis: NSLayoutConstraint.Axis {
+        get {
+            segmentedControl.axis
+        }
+        set {
+            segmentedControl.axis = newValue
+        }
+    }
+    
+    public var distribution: UIStackView.Distribution {
+        get {
+            segmentedControl.distribution
+        }
+        set {
+            segmentedControl.distribution = newValue
         }
     }
     
@@ -87,18 +118,12 @@ open class ACDTabBar: UIView {
         
     public private(set) lazy var segmentedControl = ACDSegmentedControl(buttonBuilder: makeButtonClosure)
     
-    private func _invalidateStackView() {
-        segmentedControl.itemSpacing = itemSpacing
-    }
-    
     private let makeButtonClosure: () -> ACDButton
     
     public init(buttonBuilder: @escaping () -> ACDButton) {
         makeButtonClosure = buttonBuilder
         
         super.init(frame: .zero)
-        
-        _invalidateStackView()
         
         segmentedControl.addAction(for: .valueChanged) { [weak self] in
             guard let self = self else { return }

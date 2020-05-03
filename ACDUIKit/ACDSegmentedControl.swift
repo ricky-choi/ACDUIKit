@@ -36,7 +36,7 @@ open class ACDSegmentedControl: UIControl {
         
     open var isMomentary: Bool = false
     
-    open var numberOfSegments: Int {
+    public var numberOfSegments: Int {
         _stackView.numberOfItems
     }
     
@@ -66,8 +66,6 @@ open class ACDSegmentedControl: UIControl {
         _stackView.cleanup()
     }
     
-    // MARK: - custom properties
-    
     open func insertSegment(withTitleAndImage titleAndImage: HasTitleAndImage?, at segment: Int, animated: Bool) {
         let button = makeButton(titleAndImage: titleAndImage)
         
@@ -86,9 +84,41 @@ open class ACDSegmentedControl: UIControl {
         }
     }
     
-    open var itemSpacing: CGFloat = 0 {
-        didSet {
-            _stackView.spacing = itemSpacing
+    // MARK: - Stack View Properties
+    
+    public var alignment: UIStackView.Alignment {
+        get {
+            _stackView.alignment
+        }
+        set {
+            _stackView.alignment = newValue
+        }
+    }
+    
+    public var axis: NSLayoutConstraint.Axis {
+        get {
+            _stackView.axis
+        }
+        set {
+            _stackView.axis = newValue
+        }
+    }
+    
+    public var distribution: UIStackView.Distribution {
+        get {
+            _stackView.distribution
+        }
+        set {
+            _stackView.distribution = newValue
+        }
+    }
+    
+    public var spacing: CGFloat {
+        get {
+            _stackView.spacing
+        }
+        set {
+            _stackView.spacing = newValue
         }
     }
     
