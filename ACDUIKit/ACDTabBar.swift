@@ -94,9 +94,7 @@ open class ACDTabBar: UIView {
     }
     
     // MARK: -
-    open var preferredSize: CGSize {
-        CGSize(width: CGFloat.infinity, height: 74)
-    }
+    open var preferredSize: CGSize = CGSize(width: 55, height: 55)
     
     private var _items: [UITabBarItem]?
     private weak var _selectedItem: UITabBarItem? {

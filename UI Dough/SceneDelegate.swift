@@ -24,9 +24,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return .init()
         })
         tabBar.itemSpacing = 5
-        tabBar.axis = .vertical
-        tabBar.alignment = .leading
+        tabBar.preferredSize = .init(width: 100, height: 44)
+        
         let tabBarController = ACDTabBarController(tabBar: tabBar)
+        tabBarController.tabBarLocation = .top
         
         let vc1 = UIViewController()
         vc1.tabBarItem = UITabBarItem(title: "Tray", image: UIImage(systemName: "tray.full"), selectedImage: UIImage(systemName: "tray.full.fill"))

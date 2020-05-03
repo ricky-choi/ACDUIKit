@@ -76,7 +76,7 @@ open class ACDTabBarController: UIViewController {
                 addNewViewController(newVC, targetView: _contentView)
             }
             
-            invalidateTabBarIndex()
+            _invalidateTabBarIndex()
             invalidateTabBarAutoHide()
             
             setNeedsStatusBarAppearanceUpdate()
@@ -101,6 +101,11 @@ open class ACDTabBarController: UIViewController {
     }
     
     public let tabBar: ACDTabBar
+    public var tabBarLocation: TabBarLocation = .bottom {
+        didSet {
+            _invalidateTabBarLocation()
+        }
+    }
     
     public weak var delegate: ACDTabBarControllerDelegate?
         
@@ -124,8 +129,6 @@ open class ACDTabBarController: UIViewController {
 
         tabBar.delegate = self
         view.addSubview(tabBar)
-        
-        additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: 0, bottom: tabBar.preferredSize.height, right: 0)
     }
     
     open override func viewWillAppear(_ animated: Bool) {
@@ -134,8 +137,12 @@ open class ACDTabBarController: UIViewController {
         setTabBarHidden(false, animated: false)
     }
     
-    private func invalidateTabBarIndex() {
+    private func _invalidateTabBarIndex() {
         tabBar.segmentedControl.selectedSegmentIndex = selectedIndex
+    }
+    
+    private func _invalidateTabBarLocation() {
+        isTabBarBarHidden = false
     }
     
     private func viewController(for item: UITabBarItem) -> UIViewController? {
@@ -145,8 +152,6 @@ open class ACDTabBarController: UIViewController {
     }
     
     // MARK: -
-    
-    private var bottomSafeAreaInset: CGFloat = -1
     
     private var _isTabBarBarHidden: Bool = false
     public var isTabBarBarHidden: Bool {
@@ -172,7 +177,7 @@ open class ACDTabBarController: UIViewController {
     }
     
     private func invalidateCustomTabBar() {
-        guard bottomSafeAreaInset >= 0 else {
+        guard let _ = view.window else {
             return
         }
         
@@ -180,17 +185,61 @@ open class ACDTabBarController: UIViewController {
     }
     
     private func makeCustomTabBarBarHidden(_ isHidden: Bool) {
+        guard let windowSafeAreaInsets = view.window?.safeAreaInsets else {
+            return
+        }
         
         _isTabBarBarHidden = isHidden
         
-        let customtabBarHeight = tabBar.preferredSize.height
-        let tabBarHeight = bottomSafeAreaInset + customtabBarHeight
+        let tabBarSize = tabBar.preferredSize
         let tabBarFrame: CGRect
         
-        if isHidden {
-            tabBarFrame = CGRect(x: 0, y: view.bounds.height, width: view.frame.width, height: customtabBarHeight)
-        } else {
-            tabBarFrame = CGRect(x: 0, y: view.bounds.height - tabBarHeight, width: view.frame.width, height: customtabBarHeight)
+        switch tabBarLocation {
+        
+        case .top:
+            if isHidden {
+                tabBarFrame = CGRect(x: 0, y: -tabBarSize.height,
+                                     width: view.frame.width, height: tabBarSize.height)
+            } else {
+                tabBarFrame = CGRect(x: 0, y: windowSafeAreaInsets.top,
+                                     width: view.frame.width, height: tabBarSize.height)
+            }
+        case .bottom:
+            if isHidden {
+                tabBarFrame = CGRect(x: 0, y: view.frame.height,
+                                     width: view.frame.width, height: tabBarSize.height)
+            } else {
+                tabBarFrame = CGRect(x: 0, y: view.frame.height - (tabBarSize.height + windowSafeAreaInsets.bottom),
+                                     width: view.frame.width, height: tabBarSize.height)
+            }
+        case .left:
+            if isHidden {
+                tabBarFrame = CGRect(x: -tabBarSize.width, y: 0,
+                                     width: tabBarSize.width, height: view.frame.height)
+            } else {
+                tabBarFrame = CGRect(x: windowSafeAreaInsets.left, y: 0,
+                                     width: tabBarSize.width, height: view.frame.height)
+            }
+        case .right:
+            if isHidden {
+                tabBarFrame = CGRect(x: view.frame.width, y: 0,
+                                     width: tabBarSize.width, height: view.frame.height)
+            } else {
+                tabBarFrame = CGRect(x: view.frame.width - (tabBarSize.width + windowSafeAreaInsets.right), y: 0,
+                                     width: tabBarSize.width, height: view.frame.height)
+            }
+        }
+        
+        switch tabBarLocation {
+        
+        case .top:
+            additionalSafeAreaInsets = UIEdgeInsets(top: tabBarSize.height, left: 0, bottom: 0, right: 0)
+        case .bottom:
+            additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: 0, bottom: tabBarSize.height, right: 0)
+        case .left:
+            additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: tabBarSize.width, bottom: 0, right: 0)
+        case .right:
+            additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: tabBarSize.width)
         }
         
         tabBar.frame = tabBarFrame
@@ -200,11 +249,6 @@ open class ACDTabBarController: UIViewController {
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        guard let window = view.window else {
-            return
-        }
-        
-        bottomSafeAreaInset = window.safeAreaInsets.bottom
         invalidateCustomTabBar()
     }
     
@@ -288,6 +332,15 @@ extension ACDTabBarController: ACDTabBarDelegate {
         }
         
         delegate?.tabBarController?(self, didSelect: selectedVC)
+    }
+}
+
+extension ACDTabBarController {
+    public enum TabBarLocation {
+        case top
+        case bottom
+        case left
+        case right
     }
 }
 
