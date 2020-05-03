@@ -21,23 +21,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         let tabBar = ACDTabBar(buttonBuilder: { () -> ACDButton in
-            return .init()
+            let button = ACDButton()
+            button.normalTintColor = .gray
+            button.selectedTintColor = .black
+            return button
         })
         tabBar.itemSpacing = 5
         tabBar.preferredSize = .init(width: 100, height: 44)
         
         let tabBarController = ACDTabBarController(tabBar: tabBar)
         tabBarController.tabBarLocation = .top
-        
-        let vc1 = UIViewController()
-        vc1.tabBarItem = UITabBarItem(title: "Tray", image: UIImage(systemName: "tray.full"), selectedImage: UIImage(systemName: "tray.full.fill"))
-        vc1.view.backgroundColor = .systemYellow
-        
-        let vc2 = UIViewController()
-        vc2.tabBarItem = UITabBarItem(title: "Person", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
-        vc2.view.backgroundColor = .systemTeal
-        
-        tabBarController.viewControllers = [vc1, vc2]
+        tabBarController.viewControllers = [Test1ViewController(),
+                                            Test2ViewController()]
         
         window?.rootViewController = tabBarController
     }

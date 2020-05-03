@@ -183,6 +183,10 @@ open class ACDSegmentedControl: UIControl {
         button.setTitle(titleAndImage?.title, for: .normal)
         button.setImage(titleAndImage?.image, for: .normal)
         
+        if let tabBarItem = titleAndImage as? UITabBarItem {
+            button.setImage(tabBarItem.selectedImage, for: .selected)
+        }
+        
         button.addAction(for: .touchUpInside) {
             self.buttonTouched(button: button)
         }

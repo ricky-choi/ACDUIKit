@@ -93,8 +93,10 @@ open class ACDButton: UIButton, HitExpandable {
         didSet {
             if isSelected, let selectedColor = selectedTintColor {
                 tintColor = selectedColor
+                setTitleColor(selectedColor, for: .selected)
             } else if let normalColor = normalTintColor {
                 tintColor = normalColor
+                setTitleColor(normalColor, for: .normal)
             }
         }
     }
