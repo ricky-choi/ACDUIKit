@@ -177,18 +177,21 @@ open class ACDTabBarController: UIViewController {
     }
     
     private func invalidateCustomTabBar() {
-        guard let _ = view.window else {
-            return
-        }
-        
         makeCustomTabBarBarHidden(isTabBarBarHidden)
     }
     
+    private var _baseSafeAreaInsets: UIEdgeInsets?
     private func makeCustomTabBarBarHidden(_ isHidden: Bool) {
-        guard let windowSafeAreaInsets = view.window?.safeAreaInsets else {
+        guard view.window != nil else {
             return
         }
         
+        if _baseSafeAreaInsets == nil {
+            _baseSafeAreaInsets = view.safeAreaInsets
+        }
+        
+        let baseSafeAreaInsets = _baseSafeAreaInsets!
+
         _isTabBarBarHidden = isHidden
         
         let tabBarSize = tabBar.preferredSize
@@ -201,7 +204,7 @@ open class ACDTabBarController: UIViewController {
                 tabBarFrame = CGRect(x: 0, y: -tabBarSize.height,
                                      width: view.frame.width, height: tabBarSize.height)
             } else {
-                tabBarFrame = CGRect(x: 0, y: windowSafeAreaInsets.top,
+                tabBarFrame = CGRect(x: 0, y: baseSafeAreaInsets.top,
                                      width: view.frame.width, height: tabBarSize.height)
             }
         case .bottom:
@@ -209,7 +212,7 @@ open class ACDTabBarController: UIViewController {
                 tabBarFrame = CGRect(x: 0, y: view.frame.height,
                                      width: view.frame.width, height: tabBarSize.height)
             } else {
-                tabBarFrame = CGRect(x: 0, y: view.frame.height - (tabBarSize.height + windowSafeAreaInsets.bottom),
+                tabBarFrame = CGRect(x: 0, y: view.frame.height - (tabBarSize.height + baseSafeAreaInsets.bottom),
                                      width: view.frame.width, height: tabBarSize.height)
             }
         case .left:
@@ -217,7 +220,7 @@ open class ACDTabBarController: UIViewController {
                 tabBarFrame = CGRect(x: -tabBarSize.width, y: 0,
                                      width: tabBarSize.width, height: view.frame.height)
             } else {
-                tabBarFrame = CGRect(x: windowSafeAreaInsets.left, y: 0,
+                tabBarFrame = CGRect(x: baseSafeAreaInsets.left, y: 0,
                                      width: tabBarSize.width, height: view.frame.height)
             }
         case .right:
@@ -225,7 +228,7 @@ open class ACDTabBarController: UIViewController {
                 tabBarFrame = CGRect(x: view.frame.width, y: 0,
                                      width: tabBarSize.width, height: view.frame.height)
             } else {
-                tabBarFrame = CGRect(x: view.frame.width - (tabBarSize.width + windowSafeAreaInsets.right), y: 0,
+                tabBarFrame = CGRect(x: view.frame.width - (tabBarSize.width + baseSafeAreaInsets.right), y: 0,
                                      width: tabBarSize.width, height: view.frame.height)
             }
         }
