@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ACDSplitViewController: UIViewController {
+open class ACDSplitViewController: UIViewController {
     
     public let contentView = UIView()
     
@@ -69,7 +69,7 @@ public class ACDSplitViewController: UIViewController {
         didSet { invalidateViewLayout(animated: true) }
     }
 
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         contentView.backgroundColor = .systemBackground
@@ -85,7 +85,7 @@ public class ACDSplitViewController: UIViewController {
         invalidateViewLayout()
     }
     
-    public override func viewDidLayoutSubviews() {
+    open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         invalidateViewLayout()
