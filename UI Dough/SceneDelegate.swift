@@ -20,6 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
+        // tab bar
+        /*
         let tabBar = ACDTabBar(buttonBuilder: { () -> ACDButton in
             let button = ACDButton()
             button.normalTintColor = .gray
@@ -35,6 +37,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                             Test2ViewController()]
         
         window?.rootViewController = tabBarController
+        */
+        // split view
+        
+        let splitVC = ACDSplitViewController()
+        splitVC.showLeadingView(true)
+        splitVC.showTrailingView(true)
+        
+        splitVC.title = "ACDSplit"
+        splitVC.navigationItem.leftBarButtonItem = splitVC.standardLeadingToggleBarButtonItem
+        splitVC.navigationItem.rightBarButtonItem = splitVC.standardTrailingToggleBarButtonItem
+        
+        let cview = UIView()
+        cview.backgroundColor = .systemBlue
+        let baseView = splitVC.contentView
+        baseView.layoutMargins = .init(top: 10, left: 10, bottom: 10, right: 10)
+        splitVC.contentView.addSubview(cview)
+        cview.translatesAutoresizingMaskIntoConstraints = false
+        cview.leadingAnchor.constraint(equalTo: baseView.layoutMarginsGuide.leadingAnchor).isActive = true
+        cview.trailingAnchor.constraint(equalTo: baseView.layoutMarginsGuide.trailingAnchor).isActive = true
+        cview.topAnchor.constraint(equalTo: baseView.layoutMarginsGuide.topAnchor).isActive = true
+        cview.bottomAnchor.constraint(equalTo: baseView.layoutMarginsGuide.bottomAnchor).isActive = true
+        
+        let nc = UINavigationController(rootViewController: splitVC)
+        
+        window?.rootViewController = nc
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
